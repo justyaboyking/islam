@@ -1,4 +1,7 @@
-import streamlit as st
+/* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}import streamlit as st
 from datetime import datetime
 
 # Page configuration
@@ -451,10 +454,39 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    /* Personal message styling */
+    .personal-message {
+        background: rgba(10, 14, 26, 0.7);
+        border: 2px solid #d4af37;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        text-align: center;
+    }
+    
+    .personal-message p {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    
+    .personal-message .name {
+        color: #d4af37;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    
+    .message-decoration {
+        display: inline-block;
+        color: #d4af37;
+        font-size: 1.5rem;
+        margin: 0 10px;
+    }
+    
 </style>
 """, unsafe_allow_html=True)
 
@@ -646,6 +678,13 @@ with col4:
         <p class="countdown-label">Seconden</p>
     </div>
     """, unsafe_allow_html=True)
+
+# Add personalized message from Zakaria
+st.markdown("""
+<div class="personal-message">
+    <p><span class="message-decoration">☪️</span> <span class="name">Zakaria</span> wenst iedereen een gezegend Eid al-Fitr <span class="message-decoration">☪️</span></p>
+</div>
+""", unsafe_allow_html=True)
 
 # Add dua in Arabic and Dutch
 st.markdown("""
