@@ -83,65 +83,114 @@ st.markdown("""
         position: absolute;
         width: 2px;
         height: 2px;
-        background-color: white;
+        background-color: #ffd966;
         border-radius: 50%;
         animation: twinkle var(--duration) infinite ease-in-out;
         opacity: 0.7;
+        box-shadow: 0 0 3px #ffd966;
     }
     
     @keyframes twinkle {
-        0% { opacity: 0.2; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.5); }
-        100% { opacity: 0.2; transform: scale(1); }
+        0% { opacity: 0.2; transform: scale(1); box-shadow: 0 0 2px #ffd966; }
+        50% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 5px #ffd966, 0 0 10px rgba(255, 217, 102, 0.3); }
+        100% { opacity: 0.2; transform: scale(1); box-shadow: 0 0 2px #ffd966; }
     }
     
-    /* Generate 50 stars with different positions and animation durations */
-    .star:nth-child(1) { top: 5%; left: 10%; --duration: 3s; }
+    /* Generate 80 stars with different positions and animation durations */
+    .star:nth-child(1) { top: 5%; left: 10%; --duration: 3s; width: 3px; height: 3px; }
     .star:nth-child(2) { top: 15%; left: 20%; --duration: 5s; }
-    .star:nth-child(3) { top: 25%; left: 15%; --duration: 4s; }
+    .star:nth-child(3) { top: 25%; left: 15%; --duration: 4s; width: 3px; height: 3px; }
     .star:nth-child(4) { top: 10%; left: 30%; --duration: 6s; }
-    .star:nth-child(5) { top: 20%; left: 40%; --duration: 3.5s; }
+    .star:nth-child(5) { top: 20%; left: 40%; --duration: 3.5s; width: 4px; height: 4px; }
     .star:nth-child(6) { top: 30%; left: 25%; --duration: 4.5s; }
-    .star:nth-child(7) { top: 5%; left: 50%; --duration: 5.5s; }
+    .star:nth-child(7) { top: 5%; left: 50%; --duration: 5.5s; width: 3px; height: 3px; }
     .star:nth-child(8) { top: 15%; left: 60%; --duration: 3.2s; }
-    .star:nth-child(9) { top: 25%; left: 70%; --duration: 4.2s; }
+    .star:nth-child(9) { top: 25%; left: 70%; --duration: 4.2s; width: 3px; height: 3px; }
     .star:nth-child(10) { top: 10%; left: 80%; --duration: 6.2s; }
-    .star:nth-child(11) { top: 20%; left: 90%; --duration: 3.7s; }
+    .star:nth-child(11) { top: 20%; left: 90%; --duration: 3.7s; width: 3px; height: 3px; }
     .star:nth-child(12) { top: 30%; left: 85%; --duration: 4.7s; }
-    .star:nth-child(13) { top: 40%; left: 10%; --duration: 5.7s; }
+    .star:nth-child(13) { top: 40%; left: 10%; --duration: 5.7s; width: 4px; height: 4px; }
     .star:nth-child(14) { top: 50%; left: 20%; --duration: 3.3s; }
-    .star:nth-child(15) { top: 60%; left: 15%; --duration: 4.3s; }
+    .star:nth-child(15) { top: 60%; left: 15%; --duration: 4.3s; width: 3px; height: 3px; }
     .star:nth-child(16) { top: 45%; left: 30%; --duration: 6.3s; }
-    .star:nth-child(17) { top: 55%; left: 40%; --duration: 3.8s; }
+    .star:nth-child(17) { top: 55%; left: 40%; --duration: 3.8s; width: 3px; height: 3px; }
     .star:nth-child(18) { top: 65%; left: 25%; --duration: 4.8s; }
-    .star:nth-child(19) { top: 40%; left: 50%; --duration: 5.8s; }
+    .star:nth-child(19) { top: 40%; left: 50%; --duration: 5.8s; width: 4px; height: 4px; }
     .star:nth-child(20) { top: 50%; left: 60%; --duration: 3.4s; }
-    .star:nth-child(21) { top: 60%; left: 70%; --duration: 4.4s; }
+    .star:nth-child(21) { top: 60%; left: 70%; --duration: 4.4s; width: 3px; height: 3px; }
     .star:nth-child(22) { top: 45%; left: 80%; --duration: 6.4s; }
-    .star:nth-child(23) { top: 55%; left: 90%; --duration: 3.9s; }
+    .star:nth-child(23) { top: 55%; left: 90%; --duration: 3.9s; width: 3px; height: 3px; }
     .star:nth-child(24) { top: 65%; left: 85%; --duration: 4.9s; }
-    .star:nth-child(25) { top: 75%; left: 10%; --duration: 5.9s; }
+    .star:nth-child(25) { top: 75%; left: 10%; --duration: 5.9s; width: 3px; height: 3px; }
     .star:nth-child(26) { top: 85%; left: 20%; --duration: 3.5s; }
-    .star:nth-child(27) { top: 95%; left: 15%; --duration: 4.5s; }
+    .star:nth-child(27) { top: 95%; left: 15%; --duration: 4.5s; width: 3px; height: 3px; }
     .star:nth-child(28) { top: 80%; left: 30%; --duration: 6.5s; }
-    .star:nth-child(29) { top: 90%; left: 40%; --duration: 3.1s; }
+    .star:nth-child(29) { top: 90%; left: 40%; --duration: 3.1s; width: 4px; height: 4px; }
     .star:nth-child(30) { top: 75%; left: 50%; --duration: 5.1s; }
-    .star:nth-child(31) { top: 85%; left: 60%; --duration: 3.6s; }
+    .star:nth-child(31) { top: 85%; left: 60%; --duration: 3.6s; width: 3px; height: 3px; }
     .star:nth-child(32) { top: 95%; left: 70%; --duration: 4.6s; }
-    .star:nth-child(33) { top: 80%; left: 80%; --duration: 6.6s; }
+    .star:nth-child(33) { top: 80%; left: 80%; --duration: 6.6s; width: 3px; height: 3px; }
     .star:nth-child(34) { top: 90%; left: 90%; --duration: 3.2s; }
-    .star:nth-child(35) { top: 95%; left: 85%; --duration: 4.2s; }
+    .star:nth-child(35) { top: 95%; left: 85%; --duration: 4.2s; width: 3px; height: 3px; }
+    
+    /* Additional stars */
+    .star:nth-child(36) { top: 8%; left: 15%; --duration: 4.1s; }
+    .star:nth-child(37) { top: 22%; left: 27%; --duration: 3.7s; width: 3px; height: 3px; }
+    .star:nth-child(38) { top: 32%; left: 18%; --duration: 5.2s; }
+    .star:nth-child(39) { top: 7%; left: 37%; --duration: 4.3s; width: 4px; height: 4px; }
+    .star:nth-child(40) { top: 13%; left: 45%; --duration: 3.6s; }
+    .star:nth-child(41) { top: 28%; left: 55%; --duration: 4.8s; width: 3px; height: 3px; }
+    .star:nth-child(42) { top: 18%; left: 65%; --duration: 5.3s; }
+    .star:nth-child(43) { top: 9%; left: 77%; --duration: 3.9s; width: 3px; height: 3px; }
+    .star:nth-child(44) { top: 26%; left: 82%; --duration: 4.7s; }
+    .star:nth-child(45) { top: 14%; left: 93%; --duration: 5.4s; width: 4px; height: 4px; }
+    .star:nth-child(46) { top: 35%; left: 8%; --duration: 3.8s; }
+    .star:nth-child(47) { top: 45%; left: 16%; --duration: 4.9s; width: 3px; height: 3px; }
+    .star:nth-child(48) { top: 38%; left: 33%; --duration: 5.6s; }
+    .star:nth-child(49) { top: 48%; left: 45%; --duration: 3.4s; width: 3px; height: 3px; }
+    .star:nth-child(50) { top: 42%; left: 58%; --duration: 4.2s; }
+    .star:nth-child(51) { top: 37%; left: 75%; --duration: 5.7s; width: 3px; height: 3px; }
+    .star:nth-child(52) { top: 47%; left: 88%; --duration: 3.5s; }
+    .star:nth-child(53) { top: 57%; left: 6%; --duration: 4.6s; width: 4px; height: 4px; }
+    .star:nth-child(54) { top: 69%; left: 13%; --duration: 5.2s; }
+    .star:nth-child(55) { top: 72%; left: 24%; --duration: 3.9s; width: 3px; height: 3px; }
+    .star:nth-child(56) { top: 63%; left: 35%; --duration: 4.5s; }
+    .star:nth-child(57) { top: 53%; left: 53%; --duration: 5.8s; width: 3px; height: 3px; }
+    .star:nth-child(58) { top: 68%; left: 62%; --duration: 3.3s; }
+    .star:nth-child(59) { top: 58%; left: 77%; --duration: 4.1s; width: 3px; height: 3px; }
+    .star:nth-child(60) { top: 77%; left: 88%; --duration: 5.9s; }
+    .star:nth-child(61) { top: 83%; left: 7%; --duration: 3.8s; width: 4px; height: 4px; }
+    .star:nth-child(62) { top: 91%; left: 16%; --duration: 4.4s; }
+    .star:nth-child(63) { top: 88%; left: 27%; --duration: 5.5s; width: 3px; height: 3px; }
+    .star:nth-child(64) { top: 78%; left: 45%; --duration: 3.7s; }
+    .star:nth-child(65) { top: 92%; left: 54%; --duration: 4.8s; width: 3px; height: 3px; }
+    .star:nth-child(66) { top: 87%; left: 67%; --duration: 5.1s; }
+    .star:nth-child(67) { top: 98%; left: 76%; --duration: 3.4s; width: 3px; height: 3px; }
+    .star:nth-child(68) { top: 93%; left: 93%; --duration: 4.3s; }
+    .star:nth-child(69) { top: 3%; left: 3%; --duration: 5.2s; width: 4px; height: 4px; }
+    .star:nth-child(70) { top: 3%; left: 97%; --duration: 3.6s; }
+    .star:nth-child(71) { top: 97%; left: 3%; --duration: 4.7s; width: 3px; height: 3px; }
+    .star:nth-child(72) { top: 97%; left: 97%; --duration: 5.3s; }
+    .star:nth-child(73) { top: 33%; left: 3%; --duration: 3.8s; width: 3px; height: 3px; }
+    .star:nth-child(74) { top: 63%; left: 97%; --duration: 4.9s; }
+    .star:nth-child(75) { top: 3%; left: 33%; --duration: 5.6s; width: 3px; height: 3px; }
+    .star:nth-child(76) { top: 3%; left: 63%; --duration: 3.4s; }
+    .star:nth-child(77) { top: 97%; left: 33%; --duration: 4.2s; width: 3px; height: 3px; }
+    .star:nth-child(78) { top: 97%; left: 63%; --duration: 5.7s; }
+    .star:nth-child(79) { top: 50%; left: 3%; --duration: 3.5s; width: 4px; height: 4px; }
+    .star:nth-child(80) { top: 50%; left: 97%; --duration: 4.6s; }
     
     /* Shooting stars */
     .shooting-star {
         position: absolute;
         width: 4px;
         height: 4px;
-        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 50%, rgba(255,255,255,0));
+        background: linear-gradient(to right, rgba(255,217,102,0), rgba(255,217,102,1) 50%, rgba(255,217,102,0));
         border-radius: 50%;
         animation: shoot var(--duration) infinite linear;
         opacity: 0;
         transform: rotate(var(--angle));
+        box-shadow: 0 0 10px #ffd966;
     }
     
     @keyframes shoot {
@@ -162,11 +211,14 @@ st.markdown("""
         }
     }
     
-    .shooting-star:nth-child(36) { top: 15%; left: 10%; --duration: 10s; --angle: 15deg; animation-delay: 1s; }
-    .shooting-star:nth-child(37) { top: 35%; left: 30%; --duration: 12s; --angle: 20deg; animation-delay: 5s; }
-    .shooting-star:nth-child(38) { top: 65%; left: 5%; --duration: 15s; --angle: 25deg; animation-delay: 8s; }
-    .shooting-star:nth-child(39) { top: 85%; left: 25%; --duration: 11s; --angle: 30deg; animation-delay: 2s; }
-    .shooting-star:nth-child(40) { top: 45%; left: 15%; --duration: 13s; --angle: 35deg; animation-delay: 7s; }
+    .shooting-star:nth-child(81) { top: 15%; left: 10%; --duration: 10s; --angle: 15deg; animation-delay: 1s; }
+    .shooting-star:nth-child(82) { top: 35%; left: 30%; --duration: 12s; --angle: 20deg; animation-delay: 5s; }
+    .shooting-star:nth-child(83) { top: 65%; left: 5%; --duration: 15s; --angle: 25deg; animation-delay: 8s; }
+    .shooting-star:nth-child(84) { top: 85%; left: 25%; --duration: 11s; --angle: 30deg; animation-delay: 2s; }
+    .shooting-star:nth-child(85) { top: 45%; left: 15%; --duration: 13s; --angle: 35deg; animation-delay: 7s; }
+    .shooting-star:nth-child(86) { top: 25%; left: 20%; --duration: 9s; --angle: 18deg; animation-delay: 3s; }
+    .shooting-star:nth-child(87) { top: 75%; left: 40%; --duration: 14s; --angle: 22deg; animation-delay: 6s; }
+    .shooting-star:nth-child(88) { top: 50%; left: 35%; --duration: 10s; --angle: 28deg; animation-delay: 9s; }
     
     /* Lantern container */
     .lantern-container {
@@ -444,6 +496,54 @@ st.markdown("""
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
     <div class="shooting-star"></div>
     <div class="shooting-star"></div>
     <div class="shooting-star"></div>
