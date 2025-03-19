@@ -9,17 +9,27 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Ultra-minimal CSS
+# Professional CSS without SVG
 st.markdown("""
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
     .main {
-        background-color: #0f1116;
+        background-color: #0a1931;
+        background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 30px 30px;
     }
     
     h1 {
         color: white;
         text-align: center;
-        font-size: 3rem;
+        font-size: 4rem;
+        font-family: 'Great Vibes', cursive;
         margin-top: 3rem;
         margin-bottom: 0.5rem;
     }
@@ -31,15 +41,16 @@ st.markdown("""
     
     .countdown-box {
         border: 2px solid #ffc94b;
-        border-radius: 10px;
-        padding: 1rem;
+        border-radius: 15px;
+        padding: 1.5rem 1rem;
         text-align: center;
-        background-color: #0f1116;
+        background-color: rgba(10, 25, 49, 0.6);
+        box-shadow: 0 0 10px rgba(255, 201, 75, 0.2);
     }
     
     .countdown-value {
         color: #ffc94b;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: bold;
         margin: 0;
     }
@@ -47,19 +58,99 @@ st.markdown("""
     .countdown-label {
         color: white;
         font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
-    .lantern {
-        color: #ffc94b;
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    .mosque {
-        color: #ffc94b;
-        font-size: 3rem;
-        text-align: center;
+    /* Lantern container */
+    .lantern-container {
+        display: flex;
+        justify-content: space-around;
         margin: 2rem 0;
+        padding: 0 15%;
+    }
+    
+    /* CSS Lantern */
+    .lantern {
+        width: 30px;
+        height: 50px;
+        background-color: #ffc94b;
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0 0 15px rgba(255, 201, 75, 0.5);
+    }
+    
+    .lantern:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 13px;
+        width: 4px;
+        height: 10px;
+        background-color: #ffc94b;
+    }
+    
+    /* CSS Mosque */
+    .mosque-container {
+        margin: 3rem auto;
+        width: 80%;
+        max-width: 500px;
+        height: 150px;
+        position: relative;
+    }
+    
+    .mosque-body {
+        width: 80%;
+        height: 70px;
+        background-color: #ffc94b;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .mosque-dome {
+        width: 80%;
+        height: 40px;
+        background-color: #ffc94b;
+        margin: 0 auto;
+        border-radius: 50% 50% 0 0;
+    }
+    
+    .mosque-door {
+        width: 20px;
+        height: 40px;
+        background-color: #0a1931;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .mosque-window {
+        width: 15px;
+        height: 25px;
+        background-color: #0a1931;
+        position: absolute;
+        bottom: 20px;
+        border-radius: 7px 7px 0 0;
+    }
+    
+    .mosque-minaret {
+        width: 10px;
+        height: 100px;
+        background-color: #ffc94b;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .minaret-top {
+        width: 15px;
+        height: 15px;
+        background-color: #ffc94b;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        left: -2.5px;
     }
     
     /* Hide Streamlit branding */
@@ -70,9 +161,12 @@ st.markdown("""
     /* Button styling */
     .stButton>button {
         background-color: #ffc94b !important;
-        color: #0f1116 !important;
+        color: #0a1931 !important;
         font-weight: bold !important;
         border: none !important;
+        padding: 0.5rem 1.5rem !important;
+        border-radius: 30px !important;
+        box-shadow: 0 0 10px rgba(255, 201, 75, 0.3) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -81,14 +175,38 @@ st.markdown("""
 st.markdown("<h1>Eid Mubarak</h1>", unsafe_allow_html=True)
 st.markdown("<p>Het gezegende feest vieren met vreugde en dankbaarheid</p>", unsafe_allow_html=True)
 
-# Lanterns using emoji
-st.markdown("<div class='lantern'>🪔 🪔 🪔 🪔</div>", unsafe_allow_html=True)
+# Lanterns using CSS
+st.markdown("""
+<div class="lantern-container">
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+</div>
+""", unsafe_allow_html=True)
 
-# Mosque using emoji
-st.markdown("<div class='mosque'>🕌</div>", unsafe_allow_html=True)
+# Mosque using CSS divs
+st.markdown("""
+<div class="mosque-container">
+    <div class="mosque-dome"></div>
+    <div class="mosque-body">
+        <div class="mosque-door"></div>
+        <div class="mosque-window" style="left: 20%;"></div>
+        <div class="mosque-window" style="left: 40%;"></div>
+        <div class="mosque-window" style="left: 60%;"></div>
+        <div class="mosque-window" style="left: 80%;"></div>
+    </div>
+    <div class="mosque-minaret" style="left: 5%;">
+        <div class="minaret-top"></div>
+    </div>
+    <div class="mosque-minaret" style="right: 5%;">
+        <div class="minaret-top"></div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # Countdown Section
-st.markdown("<h3 style='text-align: center; color: white;'>Resterende Tijd Tot Eid</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #ffc94b; font-size: 1.8rem;'>Resterende Tijd Tot Eid</h3>", unsafe_allow_html=True)
 st.markdown("<p>Zondag 30 maart 2025</p>", unsafe_allow_html=True)
 
 # Set countdown end date
