@@ -9,11 +9,13 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Enhanced CSS with better lanterns and upgraded mosque
+# Enhanced CSS with stars animations and upgraded mosque
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
     
     body {
         font-family: 'Poppins', sans-serif;
@@ -25,6 +27,8 @@ st.markdown("""
             radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px),
             linear-gradient(rgba(10, 14, 26, 0.9), rgba(10, 14, 26, 0.9));
         background-size: 30px 30px, auto;
+        position: relative;
+        overflow: hidden;
     }
     
     h1 {
@@ -64,12 +68,114 @@ st.markdown("""
         letter-spacing: 1px;
     }
     
+    /* Animated Stars */
+    .stars-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        animation: twinkle var(--duration) infinite ease-in-out;
+        opacity: 0.7;
+    }
+    
+    @keyframes twinkle {
+        0% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.5); }
+        100% { opacity: 0.2; transform: scale(1); }
+    }
+    
+    /* Generate 50 stars with different positions and animation durations */
+    .star:nth-child(1) { top: 5%; left: 10%; --duration: 3s; }
+    .star:nth-child(2) { top: 15%; left: 20%; --duration: 5s; }
+    .star:nth-child(3) { top: 25%; left: 15%; --duration: 4s; }
+    .star:nth-child(4) { top: 10%; left: 30%; --duration: 6s; }
+    .star:nth-child(5) { top: 20%; left: 40%; --duration: 3.5s; }
+    .star:nth-child(6) { top: 30%; left: 25%; --duration: 4.5s; }
+    .star:nth-child(7) { top: 5%; left: 50%; --duration: 5.5s; }
+    .star:nth-child(8) { top: 15%; left: 60%; --duration: 3.2s; }
+    .star:nth-child(9) { top: 25%; left: 70%; --duration: 4.2s; }
+    .star:nth-child(10) { top: 10%; left: 80%; --duration: 6.2s; }
+    .star:nth-child(11) { top: 20%; left: 90%; --duration: 3.7s; }
+    .star:nth-child(12) { top: 30%; left: 85%; --duration: 4.7s; }
+    .star:nth-child(13) { top: 40%; left: 10%; --duration: 5.7s; }
+    .star:nth-child(14) { top: 50%; left: 20%; --duration: 3.3s; }
+    .star:nth-child(15) { top: 60%; left: 15%; --duration: 4.3s; }
+    .star:nth-child(16) { top: 45%; left: 30%; --duration: 6.3s; }
+    .star:nth-child(17) { top: 55%; left: 40%; --duration: 3.8s; }
+    .star:nth-child(18) { top: 65%; left: 25%; --duration: 4.8s; }
+    .star:nth-child(19) { top: 40%; left: 50%; --duration: 5.8s; }
+    .star:nth-child(20) { top: 50%; left: 60%; --duration: 3.4s; }
+    .star:nth-child(21) { top: 60%; left: 70%; --duration: 4.4s; }
+    .star:nth-child(22) { top: 45%; left: 80%; --duration: 6.4s; }
+    .star:nth-child(23) { top: 55%; left: 90%; --duration: 3.9s; }
+    .star:nth-child(24) { top: 65%; left: 85%; --duration: 4.9s; }
+    .star:nth-child(25) { top: 75%; left: 10%; --duration: 5.9s; }
+    .star:nth-child(26) { top: 85%; left: 20%; --duration: 3.5s; }
+    .star:nth-child(27) { top: 95%; left: 15%; --duration: 4.5s; }
+    .star:nth-child(28) { top: 80%; left: 30%; --duration: 6.5s; }
+    .star:nth-child(29) { top: 90%; left: 40%; --duration: 3.1s; }
+    .star:nth-child(30) { top: 75%; left: 50%; --duration: 5.1s; }
+    .star:nth-child(31) { top: 85%; left: 60%; --duration: 3.6s; }
+    .star:nth-child(32) { top: 95%; left: 70%; --duration: 4.6s; }
+    .star:nth-child(33) { top: 80%; left: 80%; --duration: 6.6s; }
+    .star:nth-child(34) { top: 90%; left: 90%; --duration: 3.2s; }
+    .star:nth-child(35) { top: 95%; left: 85%; --duration: 4.2s; }
+    
+    /* Shooting stars */
+    .shooting-star {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 50%, rgba(255,255,255,0));
+        border-radius: 50%;
+        animation: shoot var(--duration) infinite linear;
+        opacity: 0;
+        transform: rotate(var(--angle));
+    }
+    
+    @keyframes shoot {
+        0% { 
+            opacity: 0;
+            transform: translateX(-100px) translateY(0) rotate(var(--angle));
+        }
+        5% {
+            opacity: 1;
+        }
+        20% { 
+            opacity: 0;
+            transform: translateX(100vw) translateY(100px) rotate(var(--angle));
+        }
+        100% { 
+            opacity: 0;
+            transform: translateX(100vw) translateY(100px) rotate(var(--angle));
+        }
+    }
+    
+    .shooting-star:nth-child(36) { top: 15%; left: 10%; --duration: 10s; --angle: 15deg; animation-delay: 1s; }
+    .shooting-star:nth-child(37) { top: 35%; left: 30%; --duration: 12s; --angle: 20deg; animation-delay: 5s; }
+    .shooting-star:nth-child(38) { top: 65%; left: 5%; --duration: 15s; --angle: 25deg; animation-delay: 8s; }
+    .shooting-star:nth-child(39) { top: 85%; left: 25%; --duration: 11s; --angle: 30deg; animation-delay: 2s; }
+    .shooting-star:nth-child(40) { top: 45%; left: 15%; --duration: 13s; --angle: 35deg; animation-delay: 7s; }
+    
     /* Lantern container */
     .lantern-container {
         display: flex;
         justify-content: space-around;
         margin: 2rem 0;
         padding: 0 15%;
+        position: relative;
+        z-index: 1;
     }
     
     /* Enhanced lanterns with glow effect */
@@ -82,6 +188,13 @@ st.markdown("""
         box-shadow: 
             0 0 20px rgba(255, 215, 0, 0.5),
             0 0 40px rgba(255, 215, 0, 0.3);
+        animation: lantern-glow 3s infinite ease-in-out;
+    }
+    
+    @keyframes lantern-glow {
+        0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4); }
+        100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
     }
     
     .lantern:before {
@@ -107,6 +220,11 @@ st.markdown("""
         z-index: 1;
     }
     
+    .lantern:nth-child(1) { animation-delay: 0s; }
+    .lantern:nth-child(2) { animation-delay: 0.5s; }
+    .lantern:nth-child(3) { animation-delay: 1s; }
+    .lantern:nth-child(4) { animation-delay: 1.5s; }
+    
     /* Upgraded Mosque CSS */
     .mosque-container {
         width: 100%;
@@ -114,6 +232,7 @@ st.markdown("""
         height: 200px;
         margin: 50px auto;
         position: relative;
+        z-index: 1;
     }
     
     /* Mosque dome/roof with improved curve and gradient */
@@ -127,6 +246,13 @@ st.markdown("""
         box-shadow: 
             0 10px 20px rgba(0,0,0,0.2),
             0 0 30px rgba(230, 180, 34, 0.2);
+        animation: dome-glow 5s infinite ease-in-out;
+    }
+    
+    @keyframes dome-glow {
+        0% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
+        50% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 40px rgba(230, 180, 34, 0.3); }
+        100% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
     }
     
     /* Mosque base/body with enhanced styling */
@@ -139,6 +265,13 @@ st.markdown("""
         box-shadow: 
             0 10px 20px rgba(0,0,0,0.2),
             0 0 30px rgba(230, 180, 34, 0.2);
+        animation: body-glow 5s infinite ease-in-out;
+    }
+    
+    @keyframes body-glow {
+        0% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
+        50% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 40px rgba(230, 180, 34, 0.3); }
+        100% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
     }
     
     /* Main door (center) - taller than other windows */
@@ -187,14 +320,23 @@ st.markdown("""
         box-shadow: 
             0 10px 20px rgba(0,0,0,0.2),
             0 0 30px rgba(230, 180, 34, 0.2);
+        animation: minaret-glow 5s infinite ease-in-out;
+    }
+    
+    @keyframes minaret-glow {
+        0% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
+        50% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 40px rgba(230, 180, 34, 0.3); }
+        100% { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(230, 180, 34, 0.2); }
     }
     
     /* Position minarets */
     .minaret-left {
         left: 5%;
+        animation-delay: 0.5s;
     }
     .minaret-right {
         right: 5%;
+        animation-delay: 1s;
     }
     
     /* Minaret tops */
@@ -219,22 +361,95 @@ st.markdown("""
         background: linear-gradient(to right, rgba(230, 180, 34, 0), rgba(230, 180, 34, 0.3), rgba(230, 180, 34, 0));
     }
     
+    /* Dua styling */
+    .dua-container {
+        background: rgba(10, 14, 26, 0.7);
+        border: 1px solid #d4af37;
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    
+    .dua-arabic {
+        font-family: 'Scheherazade New', serif;
+        font-size: 2rem;
+        color: #d4af37;
+        text-align: center;
+        direction: rtl;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .dua-dutch {
+        color: white;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .dua-title {
+        color: #d4af37;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
     /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    
-    /* Button styling */
-    .stButton>button {
-        background-color: #d4af37 !important;
-        color: #0a0e1a !important;
-        font-weight: bold !important;
-        border: none !important;
-        padding: 0.5rem 1.5rem !important;
-        border-radius: 30px !important;
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
-    }
 </style>
+""", unsafe_allow_html=True)
+
+# Stars container
+st.markdown("""
+<div class="stars-container">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+</div>
 """, unsafe_allow_html=True)
 
 # Title
@@ -332,8 +547,27 @@ with col4:
     </div>
     """, unsafe_allow_html=True)
 
-# Refresh button for updating the countdown
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    if st.button("Ververs Aftellen"):
-        st.rerun()
+# Add dua in Arabic and Dutch
+st.markdown("""
+<div class="dua-container">
+    <h3 class="dua-title">Dua voor Eid</h3>
+    <div class="dua-arabic">
+        اللَّهُمَّ لَكَ صُمْنَا وَعَلَى رِزْقِكَ أَفْطَرْنَا، فَتَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيم
+    </div>
+    <div class="dua-dutch">
+        "O Allah, voor U hebben wij gevast en met Uw voorziening hebben wij ons vasten verbroken. Accepteer dit van ons, want U bent de Alhorende, de Alwetende."
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Auto-refresh using JavaScript (every 1 second for the countdown)
+st.markdown("""
+<script>
+    function refreshPage() {
+        setTimeout(function() {
+            window.location.reload();
+        }, 1000);
+    }
+    refreshPage();
+</script>
+""", unsafe_allow_html=True)
