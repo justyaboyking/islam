@@ -9,13 +9,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Extremely minimal CSS to match the image
+# Ultra-minimal CSS
 st.markdown("""
 <style>
-    body {
-        font-family: sans-serif;
-    }
-    
     .main {
         background-color: #0f1116;
     }
@@ -24,6 +20,7 @@ st.markdown("""
         color: white;
         text-align: center;
         font-size: 3rem;
+        margin-top: 3rem;
         margin-bottom: 0.5rem;
     }
     
@@ -52,6 +49,19 @@ st.markdown("""
         font-size: 0.9rem;
     }
     
+    .lantern {
+        color: #ffc94b;
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .mosque {
+        color: #ffc94b;
+        font-size: 3rem;
+        text-align: center;
+        margin: 2rem 0;
+    }
+    
     /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
@@ -67,67 +77,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Simple spacer
-st.markdown("<br><br>", unsafe_allow_html=True)
-
-# Title exactly as in image
+# Title
 st.markdown("<h1>Eid Mubarak</h1>", unsafe_allow_html=True)
 st.markdown("<p>Het gezegende feest vieren met vreugde en dankbaarheid</p>", unsafe_allow_html=True)
 
-# Lanterns (exact match to image)
-st.markdown("""
-<div style="display: flex; justify-content: space-around; margin: 2rem 0;">
-    <svg width="50" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="10" height="2" fill="#ffc94b"/>
-        <ellipse cx="25" cy="50" rx="15" ry="25" fill="#ffc94b"/>
-    </svg>
-    
-    <svg width="50" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="10" height="2" fill="#ffc94b"/>
-        <ellipse cx="25" cy="50" rx="15" ry="25" fill="#ffc94b"/>
-    </svg>
-    
-    <svg width="50" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="10" height="2" fill="#ffc94b"/>
-        <ellipse cx="25" cy="50" rx="15" ry="25" fill="#ffc94b"/>
-    </svg>
-    
-    <svg width="50" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="10" height="2" fill="#ffc94b"/>
-        <ellipse cx="25" cy="50" rx="15" ry="25" fill="#ffc94b"/>
-    </svg>
-</div>
-""", unsafe_allow_html=True)
+# Lanterns using emoji
+st.markdown("<div class='lantern'>🪔 🪔 🪔 🪔</div>", unsafe_allow_html=True)
 
-# Mosque illustration (exact match to image)
-st.markdown("""
-<div style="text-align: center; margin: 2rem 0;">
-    <svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Minaret - left -->
-        <rect x="30" y="40" width="10" height="60" fill="#ffc94b"/>
-        <circle cx="35" cy="35" r="5" fill="#ffc94b"/>
-        
-        <!-- Main structure -->
-        <rect x="60" y="50" width="180" height="50" fill="#ffc94b"/>
-        
-        <!-- Dome/roof -->
-        <path d="M60 50 C100 20, 200 20, 240 50" fill="#ffc94b"/>
-        
-        <!-- Minaret - right -->
-        <rect x="260" y="40" width="10" height="60" fill="#ffc94b"/>
-        <circle cx="265" cy="35" r="5" fill="#ffc94b"/>
-        
-        <!-- Door -->
-        <rect x="135" y="60" width="30" height="40" fill="#0f1116"/>
-        
-        <!-- Windows -->
-        <rect x="80" y="65" width="15" height="25" fill="#0f1116"/>
-        <rect x="110" y="65" width="15" height="25" fill="#0f1116"/>
-        <rect x="175" y="65" width="15" height="25" fill="#0f1116"/>
-        <rect x="205" y="65" width="15" height="25" fill="#0f1116"/>
-    </svg>
-</div>
-""", unsafe_allow_html=True)
+# Mosque using emoji
+st.markdown("<div class='mosque'>🕌</div>", unsafe_allow_html=True)
 
 # Countdown Section
 st.markdown("<h3 style='text-align: center; color: white;'>Resterende Tijd Tot Eid</h3>", unsafe_allow_html=True)
