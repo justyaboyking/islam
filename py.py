@@ -24,7 +24,6 @@ def apply_custom_css():
             --light-gold: #f0d174;
             --mosque: #ffc94b;
             --white: #ffffff;
-            --light-blue: #4a6e8a;
         }
         
         html, body, [class*="css"] {
@@ -33,19 +32,15 @@ def apply_custom_css():
         
         .main {
             background-color: var(--dark-blue);
-            background-image: 
-                radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
         }
         
         .main .block-container {
             max-width: 1140px;
             padding: 2rem;
             margin: 0 auto;
-            position: relative;
         }
         
-        /* Reset some Streamlit defaults */
+        /* Reset Streamlit defaults */
         .css-18e3th9 {
             padding-top: 0;
             padding-bottom: 0;
@@ -60,21 +55,7 @@ def apply_custom_css():
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         
-        /* Star background styling */
-        .star {
-            position: absolute;
-            background-color: var(--white);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        @keyframes twinkle {
-            0% { opacity: 0.2; }
-            50% { opacity: 1; }
-            100% { opacity: 0.2; }
-        }
-        
-        /* Eid title styling */
+        /* Title styling */
         .eid-title {
             font-family: 'Great Vibes', cursive;
             font-size: 5rem;
@@ -90,102 +71,6 @@ def apply_custom_css():
             text-align: center;
             margin-bottom: 2rem;
             opacity: 0.9;
-        }
-        
-        /* Mosque styling */
-        .mosque-container {
-            text-align: center;
-            margin: 2rem 0 3rem 0;
-            position: relative;
-        }
-        
-        /* Moon styling */
-        .moon {
-            position: absolute;
-            top: 50px;
-            right: 20%;
-            width: 60px;
-            height: 60px;
-            background-color: var(--gold);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--gold);
-            z-index: 1;
-        }
-        
-        .moon::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--dark-blue);
-            border-radius: 50%;
-            transform: translate(10px, -10px);
-        }
-        
-        /* Lantern styling */
-        .lanterns {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 2rem;
-        }
-        
-        .lantern {
-            width: 40px;
-            height: 60px;
-            background-color: var(--gold);
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            animation: swing 3s infinite ease-in-out;
-        }
-        
-        .lantern::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            width: 10px;
-            height: 10px;
-            background-color: var(--gold);
-            border-radius: 50%;
-        }
-        
-        .lantern::after {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: 17px;
-            width: 6px;
-            height: 20px;
-            background-color: var(--gold);
-        }
-        
-        @keyframes swing {
-            0% { transform: rotate(3deg); }
-            50% { transform: rotate(-3deg); }
-            100% { transform: rotate(3deg); }
-        }
-        
-        .lantern:nth-child(1) {
-            animation-delay: 0s;
-            height: 50px;
-        }
-        
-        .lantern:nth-child(2) {
-            animation-delay: 0.5s;
-            height: 70px;
-        }
-        
-        .lantern:nth-child(3) {
-            animation-delay: 1s;
-            height: 55px;
-        }
-        
-        .lantern:nth-child(4) {
-            animation-delay: 1.5s;
-            height: 65px;
         }
         
         /* Countdown styling */
@@ -217,11 +102,6 @@ def apply_custom_css():
             align-items: center;
             padding: 1.5rem 1rem;
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .countdown-item:hover {
-            transform: translateY(-5px);
         }
         
         .countdown-value {
@@ -301,59 +181,12 @@ def apply_custom_css():
             padding: 0.5rem 1.5rem !important;
             border-radius: 30px !important;
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
-            transition: all 0.3s ease !important;
         }
-        
-        .stButton>button:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5) !important;
-        }
-        
-        /* Generated stars */
-        .star:nth-child(1) { top: 10%; left: 15%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 0s; }
-        .star:nth-child(2) { top: 20%; left: 25%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 0.5s; }
-        .star:nth-child(3) { top: 15%; left: 60%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 1s; }
-        .star:nth-child(4) { top: 30%; left: 80%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 1.5s; }
-        .star:nth-child(5) { top: 40%; left: 10%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 2s; }
-        .star:nth-child(6) { top: 50%; left: 30%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 2.5s; }
-        .star:nth-child(7) { top: 60%; left: 65%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 3s; }
-        .star:nth-child(8) { top: 70%; left: 75%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 3.5s; }
-        .star:nth-child(9) { top: 80%; left: 20%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 4s; }
-        .star:nth-child(10) { top: 85%; left: 90%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 4.5s; }
-        .star:nth-child(11) { top: 5%; left: 50%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 5s; }
-        .star:nth-child(12) { top: 25%; left: 40%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 5.5s; }
-        .star:nth-child(13) { top: 45%; left: 85%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 6s; }
-        .star:nth-child(14) { top: 65%; left: 50%; width: 1px; height: 1px; animation: twinkle 4s infinite; animation-delay: 6.5s; }
-        .star:nth-child(15) { top: 75%; left: 5%; width: 2px; height: 2px; animation: twinkle 4s infinite; animation-delay: 7s; }
     </style>
     """, unsafe_allow_html=True)
 
 # Apply custom CSS
 apply_custom_css()
-
-# Star background and decorative elements
-st.markdown("""
-<div style="position: relative; z-index: 0;">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-</div>
-
-<!-- Moon -->
-<div class="moon"></div>
-""", unsafe_allow_html=True)
 
 # Title and subtitle
 st.markdown("""
@@ -361,19 +194,9 @@ st.markdown("""
 <p class="eid-subtitle">Het gezegende feest vieren met vreugde en dankbaarheid</p>
 """, unsafe_allow_html=True)
 
-# Lanterns (decorative element)
+# Mosque illustration (simplified)
 st.markdown("""
-<div class="lanterns">
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-</div>
-""", unsafe_allow_html=True)
-
-# Mosque illustration
-st.markdown("""
-<div class="mosque-container">
+<div style="text-align: center; margin: 2rem 0;">
     <svg width="400" height="180" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
         <!-- Main dome -->
         <ellipse cx="200" cy="60" rx="60" ry="30" fill="#ffc94b"/>
@@ -469,28 +292,25 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Islamic decoration
+# Islamic decoration (simplified)
 st.markdown("""
 <div class="islamic-decoration">
     <div class="bismillah">﷽</div>
 </div>
 """, unsafe_allow_html=True)
 
-# Decorative pattern
+# Decorative elements (simplified)
 st.markdown("""
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
     <svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
         <line x1="10" y1="25" x2="290" y2="25" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5" />
         <circle cx="50" cy="25" r="15" fill="none" stroke="#d4af37" stroke-width="2" />
-        <circle cx="50" cy="25" r="10" fill="none" stroke="#d4af37" stroke-width="2" />
         <circle cx="50" cy="25" r="5" fill="#d4af37" />
         
         <circle cx="150" cy="25" r="15" fill="none" stroke="#d4af37" stroke-width="2" />
-        <circle cx="150" cy="25" r="10" fill="none" stroke="#d4af37" stroke-width="2" />
         <circle cx="150" cy="25" r="5" fill="#d4af37" />
         
         <circle cx="250" cy="25" r="15" fill="none" stroke="#d4af37" stroke-width="2" />
-        <circle cx="250" cy="25" r="10" fill="none" stroke="#d4af37" stroke-width="2" />
         <circle cx="250" cy="25" r="5" fill="#d4af37" />
     </svg>
 </div>
