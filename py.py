@@ -690,12 +690,12 @@ st.markdown("""
 # Add dua in Arabic and Dutch
 st.markdown("""
 <div class="dua-container" style="margin-top: 3rem;">
-    <h3 class="dua-title">Eid Wens</h3>
+    <h3 class="dua-title">Eid Dua</h3>
     <div class="dua-arabic">
-        تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ، وَجَعَلَنَا وَإِيَّاكُمْ مِنَ الْعَائِدِينَ وَالْفَائِزِينَ
+        تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ
     </div>
     <div class="dua-dutch">
-        "Moge Allah het vasten en alle goede daden accepteren van ons en van u, en moge Hij ons en u maken tot degenen die terugkeren en succesvol zijn."
+        "Moge Allah onze daden accepteren."
     </div>
 </div>
 """, unsafe_allow_html=True)
