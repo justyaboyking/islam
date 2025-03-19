@@ -689,13 +689,13 @@ st.markdown("""
 
 # Add dua in Arabic and Dutch
 st.markdown("""
-<div class="dua-container">
-    <h3 class="dua-title">Dua voor Eid</h3>
+<div class="dua-container" style="margin-top: 3rem;">
+    <h3 class="dua-title">Takbeer voor Eid</h3>
     <div class="dua-arabic">
-        اللَّهُمَّ لَكَ صُمْنَا وَعَلَى رِزْقِكَ أَفْطَرْنَا، فَتَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيم
+        اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، لَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، وَلِلَّهِ الْحَمْدُ
     </div>
     <div class="dua-dutch">
-        "O Allah, voor U hebben wij gevast en met Uw voorziening hebben wij ons vasten verbroken. Accepteer dit van ons, want U bent de Alhorende, de Alwetende."
+        "Allah is de Grootste, Allah is de Grootste. Er is geen god behalve Allah. En Allah is de Grootste, Allah is de Grootste. Alle lof is voor Allah."
     </div>
 </div>
 """, unsafe_allow_html=True)
