@@ -1,7 +1,4 @@
-/* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}import streamlit as st
+import streamlit as st
 from datetime import datetime
 
 # Page configuration
@@ -487,6 +484,10 @@ st.markdown("""
         margin: 0 10px;
     }
     
+    /* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
