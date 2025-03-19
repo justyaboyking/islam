@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Professional CSS without SVG
+# Enhanced CSS with better lanterns and deeper blue background
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -20,9 +20,11 @@ st.markdown("""
     }
     
     .main {
-        background-color: #0a1931;
-        background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-        background-size: 30px 30px;
+        background-color: #040b1c;  /* Deeper blue background */
+        background-image: 
+            radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(rgba(4, 11, 28, 0.9), rgba(4, 11, 28, 0.9));
+        background-size: 30px 30px, auto;
     }
     
     h1 {
@@ -40,16 +42,16 @@ st.markdown("""
     }
     
     .countdown-box {
-        border: 2px solid #ffc94b;
+        border: 2px solid #d4af37;  /* More golden color */
         border-radius: 15px;
         padding: 1.5rem 1rem;
         text-align: center;
-        background-color: rgba(10, 25, 49, 0.6);
-        box-shadow: 0 0 10px rgba(255, 201, 75, 0.2);
+        background-color: rgba(4, 11, 28, 0.7);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
     }
     
     .countdown-value {
-        color: #ffc94b;
+        color: #d4af37;
         font-size: 2.5rem;
         font-weight: bold;
         margin: 0;
@@ -70,24 +72,39 @@ st.markdown("""
         padding: 0 15%;
     }
     
-    /* CSS Lantern */
+    /* Enhanced lanterns with glow effect */
     .lantern {
-        width: 30px;
-        height: 50px;
-        background-color: #ffc94b;
-        border-radius: 15px;
+        width: 40px;
+        height: 60px;
+        background: linear-gradient(to bottom, #d4af37, #ffd700);
+        border-radius: 10px;
         position: relative;
-        box-shadow: 0 0 15px rgba(255, 201, 75, 0.5);
+        box-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.5),
+            0 0 40px rgba(255, 215, 0, 0.3);
     }
     
     .lantern:before {
         content: "";
         position: absolute;
-        top: -10px;
-        left: 13px;
+        top: -15px;
+        left: 18px;
         width: 4px;
-        height: 10px;
-        background-color: #ffc94b;
+        height: 15px;
+        background-color: #d4af37;
+    }
+    
+    .lantern:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        z-index: 1;
     }
     
     /* CSS Mosque */
@@ -102,23 +119,25 @@ st.markdown("""
     .mosque-body {
         width: 80%;
         height: 70px;
-        background-color: #ffc94b;
+        background-color: #d4af37;
         margin: 0 auto;
         position: relative;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     }
     
     .mosque-dome {
         width: 80%;
         height: 40px;
-        background-color: #ffc94b;
+        background-color: #d4af37;
         margin: 0 auto;
         border-radius: 50% 50% 0 0;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     }
     
     .mosque-door {
         width: 20px;
         height: 40px;
-        background-color: #0a1931;
+        background-color: #040b1c;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -129,7 +148,7 @@ st.markdown("""
     .mosque-window {
         width: 15px;
         height: 25px;
-        background-color: #0a1931;
+        background-color: #040b1c;
         position: absolute;
         bottom: 20px;
         border-radius: 7px 7px 0 0;
@@ -138,19 +157,21 @@ st.markdown("""
     .mosque-minaret {
         width: 10px;
         height: 100px;
-        background-color: #ffc94b;
+        background-color: #d4af37;
         position: absolute;
         bottom: 0;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     }
     
     .minaret-top {
         width: 15px;
         height: 15px;
-        background-color: #ffc94b;
+        background-color: #d4af37;
         border-radius: 50%;
         position: absolute;
         top: -10px;
         left: -2.5px;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     }
     
     /* Hide Streamlit branding */
@@ -160,13 +181,13 @@ st.markdown("""
     
     /* Button styling */
     .stButton>button {
-        background-color: #ffc94b !important;
-        color: #0a1931 !important;
+        background-color: #d4af37 !important;
+        color: #040b1c !important;
         font-weight: bold !important;
         border: none !important;
         padding: 0.5rem 1.5rem !important;
         border-radius: 30px !important;
-        box-shadow: 0 0 10px rgba(255, 201, 75, 0.3) !important;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -175,13 +196,13 @@ st.markdown("""
 st.markdown("<h1>Eid Mubarak</h1>", unsafe_allow_html=True)
 st.markdown("<p>Het gezegende feest vieren met vreugde en dankbaarheid</p>", unsafe_allow_html=True)
 
-# Lanterns using CSS
+# Enhanced lanterns with glow effect
 st.markdown("""
 <div class="lantern-container">
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-    <div class="lantern"></div>
+    <div class="lantern" style="height: 55px;"></div>
+    <div class="lantern" style="height: 70px;"></div>
+    <div class="lantern" style="height: 60px;"></div>
+    <div class="lantern" style="height: 65px;"></div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -206,7 +227,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Countdown Section
-st.markdown("<h3 style='text-align: center; color: #ffc94b; font-size: 1.8rem;'>Resterende Tijd Tot Eid</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #d4af37; font-size: 1.8rem;'>Resterende Tijd Tot Eid</h3>", unsafe_allow_html=True)
 st.markdown("<p>Zondag 30 maart 2025</p>", unsafe_allow_html=True)
 
 # Set countdown end date
